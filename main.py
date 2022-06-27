@@ -22,7 +22,7 @@ def main(url: str) -> str:
                 html += f"<img src='{photo}'/><br>"
 
             response = telegraph.create_page(
-                f'{n["name"] + url.split("/")[-1]}',
+                f'{n["name"] + " - " + url.split("/")[-1]}',
                 html_content=html)
             return 'http://telegra.ph/{}'.format(response['path'])
 
